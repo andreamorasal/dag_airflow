@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 PROCESSED_FILE = "/opt/airflow/data/processed/cleaned_sales.csv"
-EMAIL_RECIPIENT = "moralessalcedoandrea@gmail.com"
+EMAIL_RECIPIENT = "MY_EMAIL@gmail.com"
 
 default_args = {
     "owner": "analytics_team",
@@ -41,7 +41,7 @@ with DAG(
 
     send_email = EmailOperator(
         task_id="send_email_alert",
-        to="moralessalcedoandrea@gmail.com",
+        to="MY_EMAIL@gmail.com",
         subject="Retail Sales Alert",
         html_content="""
         <h3>Sales Alert Triggered</h3>
